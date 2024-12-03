@@ -9,6 +9,22 @@
     
     <FlyoutItem Icon="icon_main.png" FlyoutDisplayOptions="AsMultipleItems">
 
+        <!-- Página principal -->
+        <Tab Title="Inicio" Icon="icon_home.png">
+            <ShellContent
+        Title="Inicio"
+        ContentTemplate="{DataTemplate views:MainPage}"
+        Icon="icon_home.png" />
+        </Tab>
+
+
+        <!-- Nueva página: Página 2 -->
+        <Tab Title="Página 2" Icon="icon_info.png">
+            <ShellContent
+        Title="Página 2"
+        ContentTemplate="{DataTemplate views:Pagina2}"
+        Icon="icon_info.png" />
+        </Tab>
         
     </FlyoutItem>
     
