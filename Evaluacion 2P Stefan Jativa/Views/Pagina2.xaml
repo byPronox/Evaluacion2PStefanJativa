@@ -4,7 +4,7 @@
              x:Class="Evaluacion_2P_Stefan_Jativa.Views.Pagina2"
              Title="Pagina2">
     <Grid>
-        <!-- Definición de filas y columnas -->
+        
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -15,27 +15,27 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <!-- Cuadro 1: Primer Nombre -->
+        
         <BoxView Color="#FF6666" CornerRadius="10" Margin="5"/>
         <Label Text="Stefan" TextColor="Black"
                HorizontalOptions="Center"
                VerticalOptions="Center" />
 
-        <!-- Cuadro 2: Segundo Nombre -->
+        
         <BoxView Grid.Column="1" Color="#6699FF" CornerRadius="10" Margin="5"/>
         <Label Grid.Column="1" Text="Julian" TextColor="Black"
                HorizontalOptions="Center"
                VerticalOptions="Center" />
 
-        <!-- Cuadro 3: Primer Apellido -->
+        
         <BoxView Grid.Row="1" Color="#66CCCC" CornerRadius="10" Margin="5"/>
-        <Label Grid.Row="1" Text="Jativa" TextColor="Black"
+        <Label Grid.Row="1" Text="Jativa" TextColor="Red" FontAttributes="Bold"
                HorizontalOptions="Center"
                VerticalOptions="Center" />
 
-        <!-- Cuadro 4: Segundo Apellido -->
+       
         <BoxView Grid.Row="1" Grid.Column="1" Color="#99CC66" CornerRadius="10" Margin="5"/>
-        <Label Grid.Row="1" Grid.Column="1" Text="Larenas" TextColor="Black"
+        <Label Grid.Row="1" Grid.Column="1" Text="Larenas" TextColor="Red" FontAttributes="Bold"
                HorizontalOptions="Center"
                VerticalOptions="Center" />
     </Grid>
