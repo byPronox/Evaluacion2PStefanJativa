@@ -8,6 +8,7 @@ namespace Evaluacion_2P_Stefan_Jativa.Views
         private readonly string _fileName = Path.Combine(FileSystem.AppDataDirectory, "StefanJativa.txt");
 
 
+
         public MainPage()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace Evaluacion_2P_Stefan_Jativa.Views
 
             // Crear contenido para guardar
             string contenido = $"Nombre: {nuevaRecarga.NombreUsuario}\nNúmero: {nuevaRecarga.NumeroTelefono}\nFecha: {nuevaRecarga.Fecha}\n\n";
+            string filepatch = Path.Combine(FileSystem.AppDataDirectory, _fileName);
 
             // Guardar en el archivo (añadir sin sobrescribir)d
             File.AppendAllText(_fileName, contenido);
@@ -51,6 +53,8 @@ namespace Evaluacion_2P_Stefan_Jativa.Views
 
             // Actualizar la lista de recargas
             CargarRecargas();
+
+            System.Diagnostics.Debug.WriteLine($"Archivo guardado en: {filepatch}");
         }
 
         private void CargarRecargas()
