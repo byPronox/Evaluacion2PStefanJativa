@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using Evaluacion_2P_Stefan_Jativa.Models;
 
-namespace Evaluacion_2P_Stefan_Jativa
+namespace Evaluacion_2P_Stefan_Jativa.Views
 {
     public partial class MainPage : ContentPage
     {
