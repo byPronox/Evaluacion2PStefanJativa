@@ -6,26 +6,31 @@
     xmlns:views="clr-namespace:Evaluacion_2P_Stefan_Jativa.Views"
     Title="Stefan_Jativa">
 
-    
-    <FlyoutItem Icon="icon_main.png" FlyoutDisplayOptions="AsMultipleItems">
 
-        <!-- Página principal -->
-        <Tab Title="Inicio" Icon="icon_home.png">
+
+    <TabBar>
+        <Tab Title="Inicio" Icon="dotnet_bot.png">
             <ShellContent
         Title="Inicio"
         ContentTemplate="{DataTemplate views:MainPage}"
-        Icon="icon_home.png" />
+        
+/>
         </Tab>
 
 
-        <!-- Nueva página: Página 2 -->
-        <Tab Title="Página 2" Icon="icon_info.png">
+
+        <Tab Title="Página 2" Icon="dotnet_bot.png">
             <ShellContent
         Title="Página 2"
         ContentTemplate="{DataTemplate views:Pagina2}"
-        Icon="icon_info.png" />
+         />
         </Tab>
-        
-    </FlyoutItem>
+    </TabBar>
+
     
+
+
+
+
+
 </Shell>
