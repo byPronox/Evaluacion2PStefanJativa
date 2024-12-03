@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Evaluacion_2P_Stefan_Jativa.Views.Pagina2"
+             Title="Pagina2">
+    <Grid>
+        <!-- Definición de filas y columnas -->
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- Cuadro 1: Primer Nombre -->
+        <BoxView Color="#FF6666" CornerRadius="10" Margin="5"/>
+        <Label Text="Stefan" TextColor="Black"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+
+        <!-- Cuadro 2: Segundo Nombre -->
+        <BoxView Grid.Column="1" Color="#6699FF" CornerRadius="10" Margin="5"/>
+        <Label Grid.Column="1" Text="Julian" TextColor="Black"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+
+        <!-- Cuadro 3: Primer Apellido -->
+        <BoxView Grid.Row="1" Color="#66CCCC" CornerRadius="10" Margin="5"/>
+        <Label Grid.Row="1" Text="Jativa" TextColor="Black"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+
+        <!-- Cuadro 4: Segundo Apellido -->
+        <BoxView Grid.Row="1" Grid.Column="1" Color="#99CC66" CornerRadius="10" Margin="5"/>
+        <Label Grid.Row="1" Grid.Column="1" Text="Larenas" TextColor="Black"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+    </Grid>
+</ContentPage>

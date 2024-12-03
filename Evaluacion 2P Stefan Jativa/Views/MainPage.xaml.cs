@@ -1,25 +1,73 @@
-﻿namespace Evaluacion_2P_Stefan_Jativa
+﻿using System.Text;
+using Evaluacion_2P_Stefan_Jativa.Models;
+
+namespace Evaluacion_2P_Stefan_Jativa
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private readonly string _fileName = Path.Combine(FileSystem.AppDataDirectory, "StefanJativa.txt");
+
 
         public MainPage()
         {
             InitializeComponent();
+            CargarRecargas();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void Recargar_Clicked(object sender, EventArgs e)
         {
-            count++;
+            string numeroTelefono = sjativa_telefonoEntry.Text;
+            string nombreUsuario = sjativa_nombreEntry.Text;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            if (string.IsNullOrWhiteSpace(numeroTelefono) || string.IsNullOrWhiteSpace(nombreUsuario))
+            {
+                await DisplayAlert("Error", "Por favor, complete todos los campos.", "OK");
+                return;
+            }
+
+            // Crear el objeto de recarga
+            Recarga nuevaRecarga = new Recarga
+            {
+                NumeroTelefono = numeroTelefono,
+                NombreUsuario = nombreUsuario,
+                Fecha = DateTime.Now.ToString("g")
+            };
+
+            // Crear contenido para guardar
+            string contenido = $"Nombre: {nuevaRecarga.NombreUsuario}\nNúmero: {nuevaRecarga.NumeroTelefono}\nFecha: {nuevaRecarga.Fecha}\n\n";
+
+            // Guardar en el archivo (añadir sin sobrescribir)d
+            File.AppendAllText(_fileName, contenido);
+
+            // Mostrar mensaje de éxito
+            await DisplayAlert("Éxito", "La recarga fue realizada con éxito.", "OK");
+
+            // Mostrar la última recarga
+            sjativa_resultadoLabel.Text = $"Nombre: {nuevaRecarga.NombreUsuario}\nNúmero: {nuevaRecarga.NumeroTelefono}";
+
+            // Limpiar los campos de entrada
+            sjativa_telefonoEntry.Text = string.Empty;
+            sjativa_nombreEntry.Text = string.Empty;
+
+            // Actualizar la lista de recargas
+            CargarRecargas();
+        }
+
+        private void CargarRecargas()
+        {
+            // Verificar si el archivo existe
+            if (File.Exists(_fileName))
+            {
+                // Leer todo el contenido del archivo
+                string contenido = File.ReadAllText(_fileName);
+
+                // Mostrarlo en el Label
+                sjativa_resultadoLabel.Text = contenido;
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            {
+                sjativa_resultadoLabel.Text = "No hay recargas registradas.";
+            }
         }
     }
-
 }
