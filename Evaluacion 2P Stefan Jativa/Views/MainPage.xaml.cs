@@ -60,7 +60,7 @@ namespace Evaluacion_2P_Stefan_Jativa.Views
         private void CargarRecargas()
         {
             // Verificar si el archivo existe
-            if (File.Exists(_fileName))
+            if (File.Exists(_fileName))i
             {
                 // Leer todo el contenido del archivo
                 string contenido = File.ReadAllText(_fileName);
